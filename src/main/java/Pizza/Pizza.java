@@ -14,7 +14,7 @@ public abstract class Pizza {
 	
 	public void preparer() {
 		System.out.println("Préparation de "+nom);
-		System.out.println("Etalage de la pâte...");
+		System.out.println("Étalage de la pâte...");
 		System.out.println("Ajout de la sauce...");
 		System.out.println("Ajout des garnitures:");
 		for (String string : garnitures) {
@@ -27,11 +27,11 @@ public abstract class Pizza {
 	}
 
 	public void couper() {
-		System.out.println("Decoupage en parts triangulaires");
+		System.out.println("Découpage en parts triangulaires");
 	}
 
 	public void emballer() {
-		System.out.println("Emballage dans une boite officielle");
+		System.out.println("Emballage dans une boîte officielle");
 	}
 
 	public String getNom() {
