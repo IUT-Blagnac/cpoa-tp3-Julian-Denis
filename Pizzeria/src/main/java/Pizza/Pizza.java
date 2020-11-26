@@ -37,5 +37,14 @@ public abstract class Pizza {
 	public String getNom() {
 		return nom;
 	}
+	
+	public String getSauce() {
+		return sauce;
+	}
+
+	public ArrayList<String> getGarnitures() {
+		return garnitures;
+	}
+	
 
 }

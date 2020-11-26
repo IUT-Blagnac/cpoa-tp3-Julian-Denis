@@ -5,7 +5,14 @@ package Pizza;
  * @depend - * - Pizza
  */
 public class PizzaGrecqueStyleBrest extends Pizza{
-
+	
+	public PizzaGrecqueStyleBrest() {
+		super.sauce = "sauce style Brest";
+		
+		super.nom = "Pizza "+sauce+" et poivrons";
+		super.garnitures.add(" Mozarela");
+		super.garnitures.add(" Feta");
+	}
 
 
 }

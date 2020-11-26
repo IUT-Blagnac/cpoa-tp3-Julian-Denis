@@ -1,24 +1,24 @@
 @startuml
+class PizzeriaStrasbourg [[java:Fabrique.PizzeriaStrasbourg]] {
+	#Pizza creerPizza(String type)
+}
+
+Pizzeria <|-- PizzeriaStrasbourg
 abstract class Pizzeria [[java:Fabrique.Pizzeria]] {
 	+Pizza commanderPizza(String type)
 	#{abstract}Pizza creerPizza(String type)
 }
-class PizzeriaBrest [[java:Fabrique.PizzeriaBrest]] {
-	#Pizza creerPizza(String type)
-}
-
-Pizzeria <|-- PizzeriaBrest
 class PizzeriaFactory [[java:Fabrique.PizzeriaFactory]] {
 	-{static}PizzeriaFactory uniqueInstance
 	-PizzeriaFactory()
 	+{static}PizzeriaFactory getInstance()
 	+Pizzeria creer(String string)
 }
-class PizzeriaStrasbourg [[java:Fabrique.PizzeriaStrasbourg]] {
+class PizzeriaBrest [[java:Fabrique.PizzeriaBrest]] {
 	#Pizza creerPizza(String type)
 }
 
-Pizzeria <|-- PizzeriaStrasbourg
+Pizzeria <|-- PizzeriaBrest
 abstract class Pizza [[java:Pizza.Pizza]] {
 	#String pate
 	#String sauce
@@ -30,11 +30,17 @@ abstract class Pizza [[java:Pizza.Pizza]] {
 	+void emballer()
 	+String getNom()
 }
-class PizzaFromageStyleBrest [[java:Pizza.PizzaFromageStyleBrest]] {
-	+PizzaFromageStyleBrest()
+class PizzaPoivronsStyleStrasbourg [[java:Pizza.PizzaPoivronsStyleStrasbourg]] {
+	+PizzaPoivronsStyleStrasbourg()
+	+void couper()
 }
 
-Pizza <|-- PizzaFromageStyleBrest
+Pizza <|-- PizzaPoivronsStyleStrasbourg
+class PizzaPoivronsStyleBrest [[java:Pizza.PizzaPoivronsStyleBrest]] {
+	+PizzaPoivronsStyleBrest()
+}
+
+Pizza <|-- PizzaPoivronsStyleBrest
 class PizzaFromageStyleStrasbourg [[java:Pizza.PizzaFromageStyleStrasbourg]] {
 	+PizzaFromageStyleStrasbourg()
 	+void couper()
@@ -42,22 +48,26 @@ class PizzaFromageStyleStrasbourg [[java:Pizza.PizzaFromageStyleStrasbourg]] {
 
 Pizza <|-- PizzaFromageStyleStrasbourg
 class PizzaGrecqueStyleBrest [[java:Pizza.PizzaGrecqueStyleBrest]] {
+	+PizzaGrecqueStyleBrest()
 }
 
 Pizza <|-- PizzaGrecqueStyleBrest
 class PizzaGrecqueStyleStrasbourg [[java:Pizza.PizzaGrecqueStyleStrasbourg]] {
+	+PizzaGrecqueStyleStrasbourg()
+	+void couper()
 }
 
 Pizza <|-- PizzaGrecqueStyleStrasbourg
-class PizzaPoivronsStyleBrest [[java:Pizza.PizzaPoivronsStyleBrest]] {
+class PizzaFromageStyleBrest [[java:Pizza.PizzaFromageStyleBrest]] {
+	+PizzaFromageStyleBrest()
 }
 
-Pizza <|-- PizzaPoivronsStyleBrest
-class PizzaPoivronsStyleStrasbourg [[java:Pizza.PizzaPoivronsStyleStrasbourg]] {
-}
-
-Pizza <|-- PizzaPoivronsStyleStrasbourg
+Pizza <|-- PizzaFromageStyleBrest
 Pizzeria --> Pizza
 PizzeriaBrest --> PizzaFromageStyleBrest
 PizzeriaStrasbourg --> PizzaFromageStyleStrasbourg
+PizzeriaBrest --> PizzaGrecqueStyleBrest
+PizzeriaStrasbourg --> PizzaGrecqueStyleStrasbourg
+PizzeriaBrest --> PizzaPoivronsStyleBrest
+PizzeriaStrasbourg --> PizzaPoivronsStyleStrasbourg
 @enduml
