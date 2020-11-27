@@ -1,30 +1,31 @@
 package Fabrique;
 
-public class PizzeriaFactory {
+import Pizza.Pizza;
 
-	private static PizzeriaFactory uniqueInstance = new PizzeriaFactory();
+public class PizzeriaFactory {
+	private final static PizzeriaFactory uniqueInstance = new PizzeriaFactory();
 	
 	private PizzeriaFactory() {
 		
 	}
 	
 	public static PizzeriaFactory getInstance() {
-		// TODO Auto-generated method stub
 		return uniqueInstance;
 	}
-
-	public Pizzeria creer(String string) {
-
-		switch(string) {
+	
+	public Pizzeria creer(String nom) {
+		switch(nom) {
 		case "Brest":
-			return new PizzeriaBrest();
-			
+			PizzeriaStyleBrest pizzeriaB = new PizzeriaStyleBrest();
+			return pizzeriaB;
+		
 		case "Strasbourg":
-			return new PizzeriaStrasbourg();
+			PizzeriaStyleStrasbourg pizzeriaS = new PizzeriaStyleStrasbourg();
+			return pizzeriaS;
+		
+		default : 
+			return null;
 		}
-		return null;
+		
 	}
-	
-	
-
 }

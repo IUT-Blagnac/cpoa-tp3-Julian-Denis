@@ -5,21 +5,24 @@ import Pizza.PizzaFromageStyleStrasbourg;
 import Pizza.PizzaGrecqueStyleStrasbourg;
 import Pizza.PizzaPoivronsStyleStrasbourg;
 
-public class PizzeriaStrasbourg extends Pizzeria {
+public class PizzeriaStyleStrasbourg extends Pizzeria{
 
-	@Override
-	protected Pizza creerPizza(String type) {
+	public Pizza creerPizza(String type) {
 		Pizza pizza = null;
-		if (type.equals("fromage")) {
+
+		switch(type) {
+		case "fromage":
 			pizza = new PizzaFromageStyleStrasbourg();
-		} else if (type.equals("grecque")) {
+			return pizza;
+		case "grecque":
 			pizza = new PizzaGrecqueStyleStrasbourg();
-		} else {
+			return pizza;
+		case "poivron":
 			pizza = new PizzaPoivronsStyleStrasbourg();
-		}
-		
-		
-		return pizza;
+			return pizza;
+		default:
+			return pizza;
+		}	
 	}
 
 }

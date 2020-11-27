@@ -17,28 +17,5 @@ public class PizzaTestDrive {
 
         pizza = boutiqueStrasbourg.commanderPizza("fromage");
         System.out.println(new String("JMI a commandé une ".getBytes(), Charset.forName("UTF-8")) + pizza.getNom() + "\n");
-        
-        
-        /**
-         * Préparation de Pizza sauce style brest et fromage
-Étalage de la pâte...
-Ajout de la sauce...
-Ajout des garnitures:
- Parmigiano reggiano râpé
-Cuisson 25 minutes à 180°
-Découpage en parts triangulaires
-Emballage dans une boîte officielle
-JMB a commandé une Pizza sauce style brest et fromage
-
-Préparation de Pizza pâte style Strasbourg et fromage
-Étalage de la pâte...
-Ajout de la sauce...
-Ajout des garnitures:
- Mozzarella en lamelles
-Cuisson 25 minutes à 180°
-Découpage en parts carrées
-Emballage dans une boîte officielle
-JMI a commandé une Pizza pâte style Strasbourg et fromage
-         */
     }
 }

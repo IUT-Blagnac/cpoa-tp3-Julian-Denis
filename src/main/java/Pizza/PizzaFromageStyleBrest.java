@@ -2,13 +2,10 @@ package Pizza;
 
 
 public class PizzaFromageStyleBrest extends Pizza{
-
+	
 	public PizzaFromageStyleBrest() {
-		super.sauce = "sauce style Brest";
-		
-		super.nom = "Pizza "+sauce+" et fromage";
-		super.garnitures.add(" Parmigiano reggiano râpé");
+		super.nom = "Pizza sauce style brest et fromage";
+		super.garniture.add(" Parmigiano reggiano râpé");
 	}
-
-
+	
 }

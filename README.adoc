@@ -87,11 +87,11 @@ endif::[]
 //------------------------------------ 
 == {assignment}
 
-{lastName}:: GIREAUD
+{lastName}:: Denis
 
-{firstName}:: Luc
+{firstName}:: Julian
 
-{group} #:: 
+{group} #::
 
 [%interactive]
 - [ ] {Enseignants}

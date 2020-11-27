@@ -5,21 +5,25 @@ import Pizza.PizzaFromageStyleBrest;
 import Pizza.PizzaGrecqueStyleBrest;
 import Pizza.PizzaPoivronsStyleBrest;
 
-public class PizzeriaBrest extends Pizzeria{
+public class PizzeriaStyleBrest extends Pizzeria {
 
 	@Override
-	protected Pizza creerPizza(String type) {
+	public Pizza creerPizza(String type) {
 		Pizza pizza = null;
-		if (type.equals("fromage")) {
+
+		switch(type) {
+		case "fromage":
 			pizza = new PizzaFromageStyleBrest();
-		} else if (type.equals("grecque")) {
+			return pizza;
+		case "grecque":
 			pizza = new PizzaGrecqueStyleBrest();
-		} else {
+			return pizza;
+		case "poivron":
 			pizza = new PizzaPoivronsStyleBrest();
-		}
-		
-		
-		return pizza;
+			return pizza;
+		default:
+			return pizza;
+		}	
 	}
 
 }
